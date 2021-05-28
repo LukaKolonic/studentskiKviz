@@ -11,7 +11,7 @@ namespace Application
 {
 
 
-    public partial class Register
+    public partial class ChangeAccountSettings
     {
 
         /// <summary>
@@ -24,13 +24,22 @@ namespace Application
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// email control.
+        /// name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email;
+        protected global::System.Web.UI.WebControls.TextBox name;
+
+        /// <summary>
+        /// lastname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lastname;
 
         /// <summary>
         /// password control.
@@ -51,22 +60,13 @@ namespace Application
         protected global::System.Web.UI.WebControls.TextBox confirmpassword;
 
         /// <summary>
-        /// name control.
+        /// oldpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox name;
-
-        /// <summary>
-        /// lastname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lastname;
+        protected global::System.Web.UI.WebControls.TextBox oldpassword;
 
         /// <summary>
         /// submit control.

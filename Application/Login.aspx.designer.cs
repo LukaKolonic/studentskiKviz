@@ -11,7 +11,7 @@ namespace Application
 {
 
 
-    public partial class Register
+    public partial class Login
     {
 
         /// <summary>
@@ -40,33 +40,6 @@ namespace Application
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password;
-
-        /// <summary>
-        /// confirmpassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox confirmpassword;
-
-        /// <summary>
-        /// name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox name;
-
-        /// <summary>
-        /// lastname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lastname;
 
         /// <summary>
         /// submit control.

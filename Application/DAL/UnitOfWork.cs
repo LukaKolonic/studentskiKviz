@@ -9,12 +9,16 @@ namespace Application.DAL
     public class UnitOfWork : IUnitOfWork
     {
 
-        private QuizContext _dbContext = new QuizContext();
-        private SqlRepository<Quiz> _customers;
-        private SqlRepository<User> _orders;
+        static QuizContext _dbContext;
+        SqlRepository<Quiz> _customers;
+        SqlRepository<User> _orders;
 
         public UnitOfWork()
         {
+            if(_dbContext == null)
+            {
+                _dbContext = new QuizContext();
+            }
         }
 
         public IRepository<Quiz> Quizes
