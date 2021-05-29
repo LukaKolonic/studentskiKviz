@@ -22,8 +22,8 @@ namespace Application
                 if (Page.IsValid)
                 {
                     User user = dataSource.Users.Get(u => u.Email == email.Text).FirstOrDefault();
-                    Response.Cookies["userID"].Value = user.IDUser.ToString();
-                    Response.Redirect("Account.aspx");
+                    Session["user"] = user;
+                    Response.Redirect("ChangeAccountSettings.aspx");
                 }
             }
         }

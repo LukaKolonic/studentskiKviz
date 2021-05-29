@@ -53,6 +53,7 @@
             </div>
           </div>
         </div>
+        <p class="signin">Already registered? <a href="Login.aspx">Login in here</a></p>
     </form>
 </body>
 </html>

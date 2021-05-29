@@ -13,24 +13,26 @@ namespace Application
     public partial class Register : System.Web.UI.Page
     {
         UnitOfWork dataSource = new UnitOfWork();
-        protected void Load_Complete(object sender, EventArgs e)
-        {
-            if (Page.IsPostBack && Page.IsValid)
-            {
-                dataSource.Users.Insert(new User
-                {
-                    Ime = name.Text,
-                    Prezime = lastname.Text,
-                    Email = email.Text,
-                    Password = BC.HashPassword(password.Text)
 
-                });
-                dataSource.Commit();
-            }
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.IsPostBack)
+            {
+                Page.Validate();
+                if (Page.IsValid)
+                {
+                    dataSource.Users.Insert(new User
+                    {
+                        Ime = name.Text,
+                        Prezime = lastname.Text,
+                        Email = email.Text,
+                        Password = BC.HashPassword(password.Text)
 
+                    });
+                    dataSource.Commit();
+                    Response.Redirect("Login.aspx");
+                }
+            }
         }
 
         protected void EmailValidate(object source, ServerValidateEventArgs args)

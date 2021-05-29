@@ -46,11 +46,7 @@ namespace Application
             }
         }
 
-        private User GetUser()
-        {
-            int id = int.Parse(Request.Cookies["userID"].Value);
-            return dataSource.Users.GetByID(id);
-        }
+        private User GetUser() => (User)Session["user"];
 
         protected void OldPasswordServerValidate(object source, ServerValidateEventArgs args)
         {

@@ -149,6 +149,18 @@
     border-left: 1px solid #ccc;
 }
 
+.signin {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 15px;
+    color: #f5ba1a;
+}
+
+.signin a {
+    color: #e1a70a;
+}
+
 @-webkit-keyframes check {
     0% {
         height: 0;

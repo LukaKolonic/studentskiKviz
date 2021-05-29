@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChangeAccountSettings.aspx.cs" Inherits="Application.ChangeAccountSettings"  %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChangeAccountSettings.aspx.cs" Inherits="Application.ChangeAccountSettings" EnableSessionState="ReadOnly"  %>
 
 <!DOCTYPE html>
 

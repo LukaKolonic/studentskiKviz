@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Application.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Application.Login" EnableSessionState="True"%>
 
 <!DOCTYPE html>
 
@@ -33,6 +33,7 @@
             </div>
           </div>
         </div>
+        <p class="signin">New to Quiz? <a href="Register.aspx">Create an account</a></p>
     </form>
 </body>
 </html>
