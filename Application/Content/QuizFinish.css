@@ -1,0 +1,19 @@
+﻿body 
+{
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.Finish{
+    font-size:65px;
+    text-align:center;
+    margin-top:320px;
+    height: 1000px;
+}
+
+#lblPoints{
+    position:relative;
+    top:150px;
+    background-color:orange;
+}
+
+    

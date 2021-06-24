@@ -12,6 +12,7 @@ namespace Application.DAL
         static QuizContext _dbContext;
         SqlRepository<Quiz> _customers;
         SqlRepository<User> _orders;
+       
 
         public UnitOfWork()
         {
@@ -38,6 +39,8 @@ namespace Application.DAL
                     (_orders = new SqlRepository<User>(_dbContext));
             }
         }
+
+       
 
         public void Commit()
         {

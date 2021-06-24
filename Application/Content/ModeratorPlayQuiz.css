@@ -1,0 +1,77 @@
+﻿body 
+{
+    font-family: Verdana, Geneva, sans-serif;
+    
+}
+
+#CodeAccess
+{
+    font-size: 40px;
+}
+
+#TextCode
+{
+    margin-right:66px;
+    margin-left:50px;
+    margin-top:25px;
+    line-height:35px;
+    text-align:center;
+    font-size:50px;
+    text-shadow:2px 2px 3px black;
+   
+   
+    
+}
+
+.Code
+{
+    
+   /* margin-left:0px;*/
+    margin-top:10px;
+    text-align:center;
+}
+
+
+.Buttons 
+{
+    text-align:right;
+    padding-top: 150px;
+    display: inline-block;
+    width: 1850px;
+}
+
+.Buttons #Play
+{
+    margin-right:400px;
+    /*background-color:mediumseagreen;
+    border: 5px solid seagreen;*/
+    font-size:36px;
+}
+
+.Buttons #Exit
+{
+    
+    margin-right:520px;
+   /* background-color: firebrick;*/
+    /*border:5px solid darkred;*/
+    font-size:36px;
+}
+
+.Players
+{
+    margin-left: 840px;
+    margin-top: 150px;
+}
+
+#PlayersNumber 
+{
+    font-size: 40px;
+}
+
+#TextPlayers 
+{
+    margin-top: 15px;
+    margin-left: 35px;
+    font-size: 23px;
+}
+
