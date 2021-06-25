@@ -119,6 +119,7 @@
     <Content Include="ModeratorPlayQuiz.aspx" />
     <Content Include="QuizShow.aspx" />
     <Content Include="QuizFinish.aspx" />
+    <Content Include="QuizWaiting.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -190,6 +191,13 @@
     </Compile>
     <Compile Include="QuizFinish.aspx.designer.cs">
       <DependentUpon>QuizFinish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuizWaiting.aspx.cs">
+      <DependentUpon>QuizWaiting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuizWaiting.aspx.designer.cs">
+      <DependentUpon>QuizWaiting.aspx</DependentUpon>
     </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

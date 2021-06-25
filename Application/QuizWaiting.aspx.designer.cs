@@ -11,7 +11,7 @@ namespace Application
 {
 
 
-    public partial class QuizShow
+    public partial class QuizWaiting
     {
 
         /// <summary>
@@ -24,30 +24,39 @@ namespace Application
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblPitanje control.
+        /// ScriptManager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPitanje;
+        protected global::System.Web.UI.ScriptManager ScriptManager;
 
         /// <summary>
-        /// colone control.
+        /// Timer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl colone;
+        protected global::System.Web.UI.Timer Timer;
 
         /// <summary>
-        /// coltwo control.
+        /// PlayerNumberPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl coltwo;
+        protected global::System.Web.UI.UpdatePanel PlayerNumberPanel;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

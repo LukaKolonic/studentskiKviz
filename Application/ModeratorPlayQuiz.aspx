@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModeratorPlayQuiz.aspx.cs" Inherits="Application.ModeratorPlayQuiz" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModeratorPlayQuiz.aspx.cs" Inherits="Application.ModeratorPlayQuiz" EnableSessionState="True"%>
 
 <!DOCTYPE html>
 
@@ -24,6 +24,7 @@
             <asp:Label ID="PlayersNumber" runat="server" Text="Broj igrača: "></asp:Label>
             <br />
             <asp:Timer ID="Timer" OnTick="Timer_Tick" runat="server" Interval="1000" />    
+            <asp:ScriptManager ID="ScriptManager" runat="server" />
             <asp:UpdatePanel ID="PlayerNumberPanel" runat="server" UpdateMode="Conditional">
                 <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="Timer" />

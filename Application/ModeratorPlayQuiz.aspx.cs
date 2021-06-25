@@ -12,6 +12,7 @@ namespace Application
 {
     public partial class ModeratorPlayQuiz : System.Web.UI.Page
     {
+        UnitOfWork datasource = new UnitOfWork();
         protected void Page_Load(object sender, EventArgs e)
         {
             TextCode.Text = Session["generated_quiz_id"].ToString();
@@ -24,6 +25,11 @@ namespace Application
 
         protected void Play_Click(object sender, EventArgs e)
         {
+            int generatedQuizId = (int)Session["generated_quiz_id"];
+            PlayedQuiz quiz = datasource.PlayedQuizes.Get(q => q.GeneratedQuizID == generatedQuizId).FirstOrDefault();
+            quiz.BrojPitanja++;
+            datasource.PlayedQuizes.Update(quiz);
+            datasource.Commit();
             Response.Redirect("QuizShow.aspx");
         }
 
@@ -34,12 +40,11 @@ namespace Application
 
         private string GetConnectedPlayers()
         {
-            UnitOfWork datasource = new UnitOfWork();
 
             int generatedQuizId = (int)Session["generated_quiz_id"];
-            int quizId = datasource.PlayedQuizes.Get(q => q.GeneratedQuizID == generatedQuizId).FirstOrDefault().IDPlayedQuiz;
+            int quizID = datasource.PlayedQuizes.Get(q => q.GeneratedQuizID == generatedQuizId).FirstOrDefault().IDPlayedQuiz;
 
-            return datasource.Players.Get(p => p.PlayedQuizID == quizId).Count().ToString();
+            return (datasource.Players.Get(p => p.PlayedQuizID == quizID).Count().ToString()) ?? "0";
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DummyQuizStart.aspx.cs" Inherits="Application.DummyQuizStart" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DummyQuizStart.aspx.cs" Inherits="Application.DummyQuizStart" EnableSessionState="True"%>
 
 <!DOCTYPE html>
 
