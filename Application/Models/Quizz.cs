@@ -1,15 +1,14 @@
-using Application.Models;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Application.DAL
+namespace Application.Models
 {
-    public partial class QuizContext : DbContext
+    public partial class Quizz : DbContext
     {
-        public QuizContext()
-            : base("name=QuizConnection")
+        public Quizz()
+            : base("name=Quizz")
         {
         }
 

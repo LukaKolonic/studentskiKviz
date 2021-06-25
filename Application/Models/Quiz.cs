@@ -4,20 +4,13 @@ namespace Application.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Quiz")]
     public partial class Quiz
     {
-        private int id;
-        private static int counter = 0;
-
-        public Quiz(int userID, User user, string code)
+        public Quiz()
         {
-            id = counter++;
-            UserID = userID;
-            User = user;
-            Code = code;
+            Pitanje = new HashSet<Pitanje>();
         }
 
         [Key]
@@ -25,10 +18,12 @@ namespace Application.Models
 
         public int UserID { get; set; }
 
-        public string Code { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Naziv { get; set; }
+
+        public virtual ICollection<Pitanje> Pitanje { get; set; }
 
         public virtual User User { get; set; }
-
-        public List<Player> Players { get; set; }
     }
 }

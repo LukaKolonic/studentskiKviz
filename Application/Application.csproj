@@ -164,9 +164,12 @@
     <Compile Include="master.Master.designer.cs">
       <DependentUpon>master.Master</DependentUpon>
     </Compile>
+    <Compile Include="Models\Odgovor.cs" />
+    <Compile Include="Models\Pitanje.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="DAL\QuizContext.cs" />
+    <Compile Include="Models\Quizz.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ModeratorPlayQuiz.aspx.cs">
       <DependentUpon>ModeratorPlayQuiz.aspx</DependentUpon>

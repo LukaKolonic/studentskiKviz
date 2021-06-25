@@ -10,8 +10,10 @@ namespace Application.DAL
     {
 
         static QuizContext _dbContext;
-        SqlRepository<Quiz> _customers;
-        SqlRepository<User> _orders;
+        SqlRepository<Quiz> _quizes;
+        SqlRepository<User> _users;
+        SqlRepository<Pitanje> _pitanja;
+        SqlRepository<Odgovor> _odgovori;
        
 
         public UnitOfWork()
@@ -24,27 +26,24 @@ namespace Application.DAL
 
         public IRepository<Quiz> Quizes
         {
-            get
-            {
-                return _customers ??
-                    (_customers = new SqlRepository<Quiz>(_dbContext));
-            }
+            get => _quizes ?? (_quizes = new SqlRepository<Quiz>(_dbContext));
         }
 
         public IRepository<User> Users
         {
-            get
-            {
-                return _orders ??
-                    (_orders = new SqlRepository<User>(_dbContext));
-            }
+            get => _users ?? (_users = new SqlRepository<User>(_dbContext));
         }
 
-       
-
-        public void Commit()
+        public IRepository<Pitanje> Pitanja
         {
-            _dbContext.SaveChanges();
+            get => _pitanja ?? (_pitanja = new SqlRepository<Pitanje>(_dbContext));
         }
+
+        public IRepository<Odgovor> Odgovori
+        {
+            get => _odgovori ?? (_odgovori = new SqlRepository<Odgovor>(_dbContext));
+        }
+
+        public void Commit() => _dbContext.SaveChanges();
     }
 }
