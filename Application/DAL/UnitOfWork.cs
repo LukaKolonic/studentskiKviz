@@ -14,6 +14,8 @@ namespace Application.DAL
         SqlRepository<User> _users;
         SqlRepository<Pitanje> _pitanja;
         SqlRepository<Odgovor> _odgovori;
+        SqlRepository<PlayedQuiz> _playedquizes;
+        SqlRepository<Player> _players;
        
 
         public UnitOfWork()
@@ -42,6 +44,15 @@ namespace Application.DAL
         public IRepository<Odgovor> Odgovori
         {
             get => _odgovori ?? (_odgovori = new SqlRepository<Odgovor>(_dbContext));
+        }
+        public IRepository<PlayedQuiz> PlayedQuizes
+        {
+            get => _playedquizes ?? (_playedquizes = new SqlRepository<PlayedQuiz>(_dbContext));
+        }
+
+        public IRepository<Player> Players
+        {
+            get => _players ?? (_players = new SqlRepository<Player>(_dbContext));
         }
 
         public void Commit() => _dbContext.SaveChanges();

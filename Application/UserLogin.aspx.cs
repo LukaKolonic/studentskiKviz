@@ -14,18 +14,11 @@ namespace Application
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void NicknameValidate(object source, ServerValidateEventArgs args)
-        {
-            //args.IsValid = dataSource.Players.Get(p => p.Nickname == nickname.Text).FirstOrDefault() == null;
-            //UnitOfWork??
-        }
-
-        protected void CodeValidate(object source, ServerValidateEventArgs args)
-        {
-           
+            if(Page.IsPostBack)
+            {
+                Session["user_type"] = 1;
+                Response.Redirect("QuizWaiting.aspx");
+            }
         }
     }
 }

@@ -69,6 +69,24 @@ namespace Application
         protected global::System.Web.UI.WebControls.Label PlayersNumber;
 
         /// <summary>
+        /// Timer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer Timer;
+
+        /// <summary>
+        /// PlayerNumberPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel PlayerNumberPanel;
+
+        /// <summary>
         /// TextPlayers control.
         /// </summary>
         /// <remarks>

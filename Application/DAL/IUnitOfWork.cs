@@ -13,6 +13,9 @@ namespace Application.DAL
         IRepository<User> Users { get; }
         IRepository<Pitanje> Pitanja { get; }
         IRepository<Odgovor> Odgovori { get; }
+        IRepository<PlayedQuiz> PlayedQuizes { get; }
+        IRepository<Player> Players { get; }
+
         void Commit();
     }
 }

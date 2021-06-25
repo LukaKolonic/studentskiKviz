@@ -4,13 +4,16 @@ namespace Application.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
 
     [Table("Quiz")]
     public partial class Quiz
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Quiz()
         {
             Pitanje = new HashSet<Pitanje>();
+            PlayedQuiz = new HashSet<PlayedQuiz>();
         }
 
         [Key]
@@ -22,7 +25,11 @@ namespace Application.Models
         [StringLength(50)]
         public string Naziv { get; set; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pitanje> Pitanje { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PlayedQuiz> PlayedQuiz { get; set; }
 
         public virtual User User { get; set; }
     }

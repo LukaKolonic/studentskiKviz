@@ -51,7 +51,7 @@ namespace Application
         protected void OldPasswordServerValidate(object source, ServerValidateEventArgs args)
         {
             User user = GetUser();
-            args.IsValid = BC.Verify(oldpassword.Text, user?.Password);
+            args.IsValid = BC.Verify(oldpassword.Text, user.Password);
         }
     }
 }

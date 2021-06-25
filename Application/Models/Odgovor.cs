@@ -21,5 +21,8 @@ namespace Application.Models
         public bool Correct { get; set; }
 
         public virtual Pitanje Pitanje { get; set; }
+
+        public override string ToString() => $"{Tekst}";
     }
 }
+

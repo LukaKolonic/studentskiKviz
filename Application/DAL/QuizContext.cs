@@ -15,6 +15,8 @@ namespace Application.DAL
 
         public virtual DbSet<Odgovor> Odgovor { get; set; }
         public virtual DbSet<Pitanje> Pitanje { get; set; }
+        public virtual DbSet<PlayedQuiz> PlayedQuiz { get; set; }
+        public virtual DbSet<Player> Player { get; set; }
         public virtual DbSet<Quiz> Quiz { get; set; }
         public virtual DbSet<User> User { get; set; }
 
@@ -26,8 +28,20 @@ namespace Application.DAL
                 .HasForeignKey(e => e.PitanjeID)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<PlayedQuiz>()
+                .HasMany(e => e.Player)
+                .WithRequired(e => e.PlayedQuiz)
+                .HasForeignKey(e => e.PlayedQuizID)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Quiz>()
                 .HasMany(e => e.Pitanje)
+                .WithRequired(e => e.Quiz)
+                .HasForeignKey(e => e.QuizID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Quiz>()
+                .HasMany(e => e.PlayedQuiz)
                 .WithRequired(e => e.Quiz)
                 .HasForeignKey(e => e.QuizID)
                 .WillCascadeOnDelete(false);
