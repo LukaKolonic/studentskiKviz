@@ -13,5 +13,16 @@ namespace Application
         {
 
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            string webpage = Request.QueryString["aspxerrorpath"];
+            Response.Redirect(webpage);
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UserLogin.aspx");
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace Application
             bool isModerator = (int)Session["user_type"] == 0;
             int quizId = datasource.PlayedQuizes.Get(q => q.GeneratedQuizID == generatedQuizId).FirstOrDefault().IDPlayedQuiz;
             List<Player> players = datasource.Players.Get(p => p.PlayedQuizID == quizId).ToList();
-            players.Sort((p1, p2) => p1.Points.CompareTo(p2.Points));
+            players.Sort((p1, p2) => -p1.Points.CompareTo(p2.Points));
 
             if (!isModerator)
             {
@@ -37,11 +37,27 @@ namespace Application
         {
             Table table = new Table
             {
-                CssClass = "table table-info table-stripped"
+                CssClass = "table table-primary table-striped"
             };
-            table.Controls.Add(AddTableRow("Player", "Points"));
-            players.ForEach(p => table.Controls.Add(AddTableRow(p.Name, p.Points.ToString())));
+            table.Controls.Add(AddTableHeader("Player", "Points"));
+            players.Take(10).ToList().ForEach(p => table.Controls.Add(AddTableRow(p.Name, p.Points.ToString())));
             form1.Controls.Add(table);
+        }
+
+        private TableHeaderRow AddTableHeader(string text1, string text2)
+        {
+            TableHeaderRow tr = new TableHeaderRow();
+            TableHeaderCell tc1 = new TableHeaderCell
+            {
+                Text = text1
+            };
+            TableHeaderCell tc2 = new TableHeaderCell
+            {
+                Text = text2
+            };
+            tr.Controls.Add(tc1);
+            tr.Controls.Add(tc2);
+            return tr;
         }
 
         private TableRow AddTableRow(string text1, string text2)
