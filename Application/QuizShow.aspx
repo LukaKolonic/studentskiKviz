@@ -9,10 +9,10 @@
 </head>
 <body>
     <form id="form1" runat="server" class ="container text-center align-content-center">
-        <div class="p-5 mb-4 bg-secondary rounded-3" style="margin-top:300px">
+        <div class="p-5 mb-4 bg-secondary rounded-3" style="margin-top:20rem">
             <asp:Label Text="Pitanje" runat="server" ID="lblPitanje" CssClass="text-white"/>
         </div>
-        <div id="colone" runat="server" class="row" style="margin-top:400px">
+        <div id="colone" runat="server" class="row" style="margin-top:23rem">
 
         </div>
         <div id="coltwo" runat="server" class="row">   

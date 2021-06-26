@@ -19,6 +19,10 @@ namespace Application
 
             List<Pitanje> pitanja = datasource.Pitanja.Get(p => p.QuizID == quizId.QuizID).ToList();
             int pitanjeID = quizId.BrojPitanja -1;
+            if(pitanjeID == pitanja.Count)
+            {
+                Response.Redirect("QuizFinish.aspx");
+            }
             lblPitanje.Text = pitanja[pitanjeID].ToString();
 
             bool isModerator = (int)Session["user_type"] == 0;

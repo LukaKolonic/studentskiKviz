@@ -7,8 +7,8 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <title></title>
 </head>
-<body>
-    <form id="form1" runat="server" class="container text-center align-content-center">
+<body style="height:100vh">
+    <form id="form1" runat="server" class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
         <div>
             <asp:ScriptManager ID="ScriptManager" runat="server" />
             <asp:Timer ID="Timer" OnTick="Timer_Tick" runat="server" Interval="1000" />    
