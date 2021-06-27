@@ -88,7 +88,6 @@ namespace Application
                 Player player = (Player)Session["player"];
                 player.Points++;
                 datasource.Players.Update(player);
-                datasource.Commit();
                 Session["player"] = player;
                 Session["lastQuestionCorrect"] = true;
             }
