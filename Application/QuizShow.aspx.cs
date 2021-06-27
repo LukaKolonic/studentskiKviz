@@ -18,7 +18,7 @@ namespace Application
             PlayedQuiz quizId = datasource.PlayedQuizes.Get(q => q.GeneratedQuizID == generatedQuizId).FirstOrDefault();
 
             List<Pitanje> pitanja = datasource.Pitanja.Get(p => p.QuizID == quizId.QuizID).ToList();
-            int pitanjeID = quizId.BrojPitanja -1;
+            int pitanjeID = quizId.BrojPitanja - 1;
             if(pitanjeID == pitanja.Count)
             {
                 Response.Redirect("QuizFinish.aspx");
@@ -34,36 +34,19 @@ namespace Application
         private void CreateButtons(bool isModerator, List<Odgovor> listOdgovori)
         {
             int itterate = 0;
+            List<string> styles = new List<string> { "col m-1 btn btn-primary", "col m-1 btn btn-success", "col m-1 btn btn-danger", "col m-1 btn btn-warning" };
             listOdgovori.ForEach(o =>
             {
                 Button btn = new Button
                 {
-                    Text = isModerator ? o.Tekst : ""
+                    Text = isModerator ? o.Tekst : "",
+                    CssClass = styles[itterate]
                 };
                 if(!isModerator)
                 { 
                     btn.Click += Btn_Click;
                     btn.Attributes.Add("Tag", o.Correct.ToString());
                 }
-                string css = "col";
-                if(itterate == 0)
-                {
-                    css = "col m-1 btn btn-primary";
-                }
-                else if(itterate == 1)
-                {
-                    css = "col m-1 btn btn-success";
-                }
-                else if(itterate == 2)
-                {
-                    css = "col m-1 btn btn-danger";
-                }
-                else if(itterate == 3)
-                {
-                    css = "col m-1 btn btn-warning";
-                }
-
-                btn.CssClass = css;
 
                 if (itterate < 2)
                 {
@@ -105,6 +88,7 @@ namespace Application
                 Player player = (Player)Session["player"];
                 player.Points++;
                 datasource.Players.Update(player);
+                datasource.Commit();
                 Session["player"] = player;
                 Session["lastQuestionCorrect"] = true;
             }
