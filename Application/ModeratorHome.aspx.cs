@@ -57,7 +57,7 @@ namespace Application
             {
                 CssClass = "table"
             };
-            table.Controls.Add(AddTableHeader("Name", ""));
+            table.Controls.Add(AddTableHeader("Naziv", ""));
             quizes.ToList().ForEach(q => table.Controls.Add(AddTableRow(q.Naziv, q.IDQuiz)));
             questionsList.Controls.Add(table);
         }
@@ -89,24 +89,34 @@ namespace Application
             tc2.CssClass = "text-end";
             Button btnEdit = new Button
             {
-                Text = "Edit",
+                Text = "Uredi",
                 CssClass = "btn btn-secondary me-3",
-                ID = id.ToString(),
                 ClientIDMode = ClientIDMode.Static
             };
+            btnEdit.Click += BtnEdit_Click;
+            btnEdit.Attributes.Add("idQuiz", id.ToString());
             Button btn = new Button
             {
                 Text = "Pokreni",
                 CssClass = "btn btn-primary btn-run",
-                ID = id.ToString(),
                 ClientIDMode = ClientIDMode.Static
             };
+            btn.Attributes.Add("idQuiz", id.ToString());
             btn.Click += Btn_Click;
             tc2.Controls.Add(btnEdit);
             tc2.Controls.Add(btn);
             tr.Controls.Add(tc1);
             tr.Controls.Add(tc2);
             return tr;
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int quizId = int.Parse(btn.Attributes["idQuiz"]);
+
+            Session["quiz_id"] = quizId;
+            Response.Redirect("ModeratorEditQuiz.aspx");
         }
 
         private void Btn_Click(object sender, EventArgs e)
@@ -116,7 +126,7 @@ namespace Application
             Session["user_type"] = 0;
             Session["generated_quiz_id"] = generatedID;
             UnitOfWork datasource = new UnitOfWork();
-            int quizId = int.Parse(btn.ID);
+            int quizId = int.Parse(btn.Attributes["idQuiz"]);
 
             Quiz quiz = unitOfWork.Quizes.GetByID(quizId);
             datasource.PlayedQuizes.Insert(new PlayedQuiz

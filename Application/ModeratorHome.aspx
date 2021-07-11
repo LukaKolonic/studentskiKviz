@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Moderator.Master" AutoEventWireup="true" CodeBehind="ModeratorHome.aspx.cs" Inherits="Application.ModeratorHome" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Moderator.Master" AutoEventWireup="true" CodeBehind="ModeratorHome.aspx.cs" Inherits="Application.ModeratorHome" EnableSessionState="True" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

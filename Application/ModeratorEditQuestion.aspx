@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Moderator.Master" AutoEventWireup="true" CodeBehind="ModeratorMakeQuestion.aspx.cs" Inherits="Application.ModeratorMakeQuestion" EnableSessionState="True" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Moderator.Master" AutoEventWireup="true" CodeBehind="ModeratorEditQuestion.aspx.cs" Inherits="Application.ModeratorEditQuestion" EnableSessionState="True" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script>
+        <script>
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('#Validacija_obvezno_pitanje').style.display = 'none';
             document.querySelector('#provjera_znakova_pitanja').style.display = 'none';
@@ -19,7 +18,7 @@
                 window.location.replace("/ModeratorMakeQuiz.aspx");
             });
         });
-    </script>
+        </script>
     <link href="Content/ModeratorMakeQuestion.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -75,8 +74,7 @@
 
             <div class="input-group mb-3">
                 <div class="offset-2 col-md-10">
-                    <asp:Button CssClass="btn btn-primary" ID="Prihvat_ipitanje" runat="server" Text="Spremi pitanje" />
-                    <a id="Create_Quiz" class="btn btn-secondary">Kreiraj kviz</a>
+                    <asp:Button CssClass="btn btn-primary" ID="btnSave" runat="server" Text="Spremi pitanje" OnClick="btnSave_Click"/>
                 </div>
             </div>
             <br />

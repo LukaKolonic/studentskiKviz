@@ -124,6 +124,8 @@
     <Content Include="DummyQuizStart.aspx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="ModeratorEditQuestion.aspx" />
+    <Content Include="ModeratorEditQuiz.aspx" />
     <Content Include="ModeratorHome.aspx" />
     <Content Include="ModeratorMakeQuestion.aspx" />
     <Content Include="ModeratorMakeQuiz.aspx" />
@@ -199,6 +201,20 @@
     </Compile>
     <Compile Include="Moderator.Master.designer.cs">
       <DependentUpon>Moderator.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ModeratorEditQuestion.aspx.cs">
+      <DependentUpon>ModeratorEditQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModeratorEditQuestion.aspx.designer.cs">
+      <DependentUpon>ModeratorEditQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModeratorEditQuiz.aspx.cs">
+      <DependentUpon>ModeratorEditQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModeratorEditQuiz.aspx.designer.cs">
+      <DependentUpon>ModeratorEditQuiz.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModeratorHome.aspx.cs">
       <DependentUpon>ModeratorHome.aspx</DependentUpon>
