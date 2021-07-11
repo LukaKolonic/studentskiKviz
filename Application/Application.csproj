@@ -53,6 +53,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.UserSecrets, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -113,10 +119,14 @@
     <Content Include="Content\custom.css" />
     <Content Include="Content\ModeratorPlayQuiz.css" />
     <Content Include="Content\QuizFinish.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Content\UserLogin.css" />
     <Content Include="DummyQuizStart.aspx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="ModeratorHome.aspx" />
+    <Content Include="ModeratorMakeQuestion.aspx" />
+    <Content Include="ModeratorMakeQuiz.aspx" />
     <Content Include="ModeratorPlayQuiz.aspx" />
     <Content Include="QuizShow.aspx" />
     <Content Include="QuizFinish.aspx" />
@@ -128,6 +138,11 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
     <Content Include="UserLogin.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -178,6 +193,34 @@
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="DAL\QuizContext.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Moderator.Master.cs">
+      <DependentUpon>Moderator.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator.Master.designer.cs">
+      <DependentUpon>Moderator.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ModeratorHome.aspx.cs">
+      <DependentUpon>ModeratorHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModeratorHome.aspx.designer.cs">
+      <DependentUpon>ModeratorHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModeratorMakeQuestion.aspx.cs">
+      <DependentUpon>ModeratorMakeQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModeratorMakeQuestion.aspx.designer.cs">
+      <DependentUpon>ModeratorMakeQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModeratorMakeQuiz.aspx.cs">
+      <DependentUpon>ModeratorMakeQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModeratorMakeQuiz.aspx.designer.cs">
+      <DependentUpon>ModeratorMakeQuiz.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ModeratorPlayQuiz.aspx.cs">
       <DependentUpon>ModeratorPlayQuiz.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -239,6 +282,7 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Moderator.Master" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -246,6 +290,8 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

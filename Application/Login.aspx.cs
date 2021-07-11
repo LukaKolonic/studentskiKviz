@@ -22,8 +22,10 @@ namespace Application
                 if (Page.IsValid)
                 {
                     User user = dataSource.Users.Get(u => u.Email == email.Text).FirstOrDefault();
-                    Session["user"] = user;
-                    Response.Redirect("ChangeAccountSettings.aspx");
+                    HttpCookie kuki = new HttpCookie("moderatorID");
+                    kuki.Value = user.IDUser.ToString();
+                    Response.Cookies.Add(kuki);
+                    Response.Redirect("ModeratorHome.aspx");
                 }
             }
         }

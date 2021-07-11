@@ -13,9 +13,17 @@ namespace Application
     public partial class ChangeAccountSettings : System.Web.UI.Page
     {
         UnitOfWork dataSource = new UnitOfWork();
+        int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            User user = GetUser();
+            HttpCookie kuki = Request.Cookies["moderatorID"];
+            if (Request.Cookies["moderatorID"] == null || int.TryParse(kuki.Value, out id) == false)
+            {
+                Response.Redirect("login.aspx");
+
+            }
+            int.TryParse(kuki.Value, out id);
+            User user = dataSource.Users.GetByID(id);
             if (Page.IsPostBack)
             {
                 Page.Validate();
@@ -36,7 +44,7 @@ namespace Application
 
                     dataSource.Users.Update(user);
                     dataSource.Commit();
-                    Response.Redirect("Account.aspx");
+                    Response.Redirect("ModeratorHome.aspx");
                 }
             }
             else
@@ -46,11 +54,14 @@ namespace Application
             }
         }
 
-        private User GetUser() => (User)Session["user"];
-
+        private User GetUser(int id)
+        {
+            User user = dataSource.Users.GetByID(id);
+            return user;
+        }
         protected void OldPasswordServerValidate(object source, ServerValidateEventArgs args)
         {
-            User user = GetUser();
+            User user = GetUser(id);
             args.IsValid = BC.Verify(oldpassword.Text, user.Password);
         }
     }
