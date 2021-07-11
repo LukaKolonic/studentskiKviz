@@ -11,6 +11,11 @@ namespace Application.DAL
     {
         IRepository<Quiz> Quizes { get; }
         IRepository<User> Users { get; }
+        IRepository<Pitanje> Pitanja { get; }
+        IRepository<Odgovor> Odgovori { get; }
+        IRepository<PlayedQuiz> PlayedQuizes { get; }
+        IRepository<Player> Players { get; }
+
         void Commit();
     }
 }

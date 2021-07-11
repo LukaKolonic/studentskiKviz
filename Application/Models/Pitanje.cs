@@ -6,35 +6,29 @@ namespace Application.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("User")]
-    public partial class User
+    [Table("Pitanje")]
+    public partial class Pitanje
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Pitanje()
         {
-            Quiz = new HashSet<Quiz>();
+            Odgovor = new HashSet<Odgovor>();
         }
 
         [Key]
-        public int IDUser { get; set; }
+        public int IDPitanje { get; set; }
+
+        public int QuizID { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string Ime { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string Prezime { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string Email { get; set; }
-
-        [Required]
-        [StringLength(64)]
-        public string Password { get; set; }
+        [StringLength(1024)]
+        public string Tekst { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Quiz> Quiz { get; set; }
+        public virtual ICollection<Odgovor> Odgovor { get; set; }
+
+        public virtual Quiz Quiz { get; set; }
+ 
+        public override string ToString() => $"{Tekst}";
     }
 }

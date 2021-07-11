@@ -111,8 +111,16 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\custom.css" />
-    <Content Include="Global.asax" />
+    <Content Include="Content\ModeratorPlayQuiz.css" />
+    <Content Include="Content\QuizFinish.css" />
+    <Content Include="Content\UserLogin.css" />
+    <Content Include="DummyQuizStart.aspx" />
+    <Content Include="ErrorPage.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="ModeratorPlayQuiz.aspx" />
+    <Content Include="QuizShow.aspx" />
+    <Content Include="QuizFinish.aspx" />
+    <Content Include="QuizWaiting.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -120,6 +128,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="UserLogin.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -141,8 +150,19 @@
     <Compile Include="DAL\IUnitOfWork.cs" />
     <Compile Include="DAL\SqlRepository.cs" />
     <Compile Include="DAL\UnitOfWork.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
+    <Compile Include="DummyQuizStart.aspx.cs">
+      <DependentUpon>DummyQuizStart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DummyQuizStart.aspx.designer.cs">
+      <DependentUpon>DummyQuizStart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -151,16 +171,55 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Odgovor.cs" />
+    <Compile Include="Models\Pitanje.cs" />
+    <Compile Include="Models\PlayedQuiz.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="DAL\QuizContext.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="ModeratorPlayQuiz.aspx.cs">
+      <DependentUpon>ModeratorPlayQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModeratorPlayQuiz.aspx.designer.cs">
+      <DependentUpon>ModeratorPlayQuiz.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuizShow.aspx.cs">
+      <DependentUpon>QuizShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuizShow.aspx.designer.cs">
+      <DependentUpon>QuizShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuizFinish.aspx.cs">
+      <DependentUpon>QuizFinish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuizFinish.aspx.designer.cs">
+      <DependentUpon>QuizFinish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuizWaiting.aspx.cs">
+      <DependentUpon>QuizWaiting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuizWaiting.aspx.designer.cs">
+      <DependentUpon>QuizWaiting.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
