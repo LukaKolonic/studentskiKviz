@@ -120,7 +120,7 @@
     <Content Include="Content\ModeratorPlayQuiz.css" />
     <Content Include="Content\QuizFinish.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\UserLogin.css" />
+    <Content Include="Content\ModeratorMakeQuestion.css" />
     <Content Include="DummyQuizStart.aspx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="Login.aspx" />

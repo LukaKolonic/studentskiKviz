@@ -53,7 +53,8 @@ namespace Application
             };
             TableHeaderCell tc2 = new TableHeaderCell
             {
-                Text = text2
+                Text = text2,
+                CssClass = "text-end"
             };
             tr.Controls.Add(tc1);
             tr.Controls.Add(tc2);
@@ -69,7 +70,8 @@ namespace Application
             };
             TableCell tc2 = new TableCell
             {
-                Text = text2
+                Text = text2,
+                CssClass = "text-end"
             };
             tr.Controls.Add(tc1);
             tr.Controls.Add(tc2);

@@ -1,16 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChangeAccountSettings.aspx.cs" Inherits="Application.ChangeAccountSettings" EnableSessionState="ReadOnly"  %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Moderator.Master" AutoEventWireup="true" CodeBehind="ChangeAccountSettings.aspx.cs" Inherits="Application.ChangeAccountSettings" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/custom.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <title>Quiz - Account</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="form_wrapper">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="form_wrapper">
           <div class="form_container">
             <div class="title_container">
               <h2>Account settings</h2>
@@ -47,6 +41,4 @@
             </div>
           </div>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

@@ -5,8 +5,8 @@
 <html>
 <head runat="server">
     <title></title>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.6.0.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -15,13 +15,14 @@
     <form id="form1" runat="server">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
+                <a class="navbar-brand" href="ModeratorHome.aspx">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
                             <asp:Label CssClass="nav-link" ID="LblIme" Text="text" runat="server" />
-                        </li>
-                        <li class="nav-item">
-                            <asp:Label CssClass="nav-link" ID="LblPrezime" Text="text" runat="server" />
                         </li>
                         <li class="nav-item">
                             <asp:Label CssClass="nav-link" ID="LblEmail" Text="text" runat="server" />

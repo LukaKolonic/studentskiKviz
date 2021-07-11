@@ -27,8 +27,7 @@ namespace Application
             int.TryParse(value, out id);
             User user = dataSource.Users.GetByID(id);
             LblEmail.Text = user.Email;
-            LblIme.Text = user.Ime;
-            LblPrezime.Text = user.Prezime;
+            LblIme.Text = $"{user.Ime} {user.Prezime}";
         }
 
         protected void Page_Load(object sender, EventArgs e)
